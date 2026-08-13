@@ -9,6 +9,7 @@ var consonants = [
     mnTh: "ขวด",
     mnRom: "khuat",
     mnEn: "bottle",
+    obsolete: true,
   },
   {
     th: "ค",
@@ -18,7 +19,15 @@ var consonants = [
     mnRom: "khwaai",
     mnEn: "buffalo",
   },
-  { th: "ฅ", rom: "kh", cls: "low", mnTh: "คน", mnRom: "khon", mnEn: "person" },
+  {
+    th: "ฅ",
+    rom: "kh",
+    cls: "low",
+    mnTh: "คน",
+    mnRom: "khon",
+    mnEn: "person",
+    obsolete: true,
+  },
   {
     th: "ฆ",
     rom: "kh",
@@ -198,6 +207,7 @@ consonants.forEach(function (c) {
   card.innerHTML =
     '<div class="card-inner">' +
     '<div class="face face-front">' +
+    (c.obsolete ? '<span class="obsolete-badge">古字</span>' : "") +
     '<div class="letter">' +
     c.th +
     "</div>" +

@@ -1,6 +1,7 @@
 body {
   margin: 0;
   font-family: sans-serif;
+  background: #f6f0e2;
 }
 nav {
   display: flex;
@@ -54,35 +55,16 @@ section h2 {
   grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
   gap: 10px;
 }
-.cons-card {
-  border-top: 4px solid #ccc;
-  background: #16213e;
-  color: #fff;
-  border-radius: 10px;
-  padding: 12px 6px;
-  text-align: center;
-}
-.cons-card.mid {
-  border-top-color: #d4a73d;
-}
-.cons-card.low {
-  border-top-color: #1b7a6b;
-}
-.cons-card.high {
-  border-top-color: #c1443c;
-}
-.cons-card .letter {
-  font-size: 28px;
-}
-.cons-card .rom {
-  font-size: 11px;
-  opacity: 0.7;
-  margin-top: 4px;
+.grid-cons {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 16px;
 }
 .cons-card {
   perspective: 600px;
-  height: 110px;
+  height: 150px;
   cursor: pointer;
+  position: relative;
 }
 .cons-card .card-inner {
   position: relative;
@@ -98,13 +80,13 @@ section h2 {
   position: absolute;
   inset: 0;
   backface-visibility: hidden;
-  border-radius: 10px;
-  border-top: 4px solid #ccc;
+  border-radius: 14px;
+  border-top: 5px solid #ccc;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 6px;
+  padding: 10px;
 }
 .cons-card.mid .face {
   border-top-color: #d4a73d;
@@ -127,32 +109,54 @@ section h2 {
   text-align: center;
 }
 .cons-card .letter {
-  font-size: 28px;
+  font-size: 42px;
 }
 .cons-card .rom {
-  font-size: 11px;
+  font-size: 13px;
   opacity: 0.7;
-  margin-top: 4px;
+  margin-top: 6px;
 }
 .cons-card .mn-th {
-  font-size: 16px;
+  font-size: 18px;
 }
 .cons-card .mn-en {
-  font-size: 11px;
-  margin-top: 4px;
+  font-size: 12px;
+  margin-top: 6px;
   opacity: 0.7;
 }
 
 .speak-btn {
-  margin-top: 6px;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
   border: none;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.15);
   color: inherit;
   border-radius: 50%;
-  width: 24px;
-  height: 24px;
+  width: 26px;
+  height: 26px;
   font-size: 12px;
 }
 .cons-card .face-back .speak-btn {
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.08);
+}
+.obsolete-badge {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  font-size: 10px;
+  color: #d4a73d;
+  opacity: 0.8;
+}
+.tip-box {
+  margin-top: 24px;
+  background: #16213e;
+  color: #f6f0e2;
+  border-radius: 14px;
+  padding: 18px 20px;
+  font-size: 14px;
+  line-height: 1.7;
+}
+.tip-box b {
+  color: #e9cd82;
 }
