@@ -1,0 +1,30 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+nav {
+  display: flex;
+  gap: 12px;
+  padding: 16px;
+  background: #16213e;
+  color: #fff;
+}
+nav a {
+  color: #fff;
+  text-decoration: none;
+}
+header {
+  padding: 60px 20px;
+  text-align: center;
+  background: #1f2e52;
+  color: #fff;
+}
+section {
+  padding: 40px 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+section h2 {
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 8px;
+}
