@@ -238,6 +238,84 @@ vowels.forEach(function (v) {
   vowelGrid.appendChild(card);
 });
 
+// 聲調資料(curve 是 SVG 音高曲線的路徑)
+var tones = [
+  {
+    th: "อา",
+    name: "สามัญ",
+    nameZh: "平聲",
+    mark: "不加符號",
+    rom: "aa",
+    curve: "M8,32 L92,32",
+  },
+  {
+    th: "อ่า",
+    name: "เอก",
+    nameZh: "低聲",
+    mark: "ไม้เอก ่",
+    rom: "àa",
+    curve: "M8,46 C30,46 60,46 92,44",
+  },
+  {
+    th: "อ้า",
+    name: "โท",
+    nameZh: "降聲",
+    mark: "ไม้โท ้",
+    rom: "âa",
+    curve: "M8,14 C40,16 60,48 92,50",
+  },
+  {
+    th: "อ๊า",
+    name: "ตรี",
+    nameZh: "高聲",
+    mark: "ไม้ตรี ๊",
+    rom: "áa",
+    curve: "M8,36 C34,10 60,8 92,8",
+  },
+  {
+    th: "อ๋า",
+    name: "จัตวา",
+    nameZh: "升聲",
+    mark: "ไม้จัตวา ๋",
+    rom: "ǎa",
+    curve: "M8,34 C26,54 46,54 60,30 C72,12 82,8 92,8",
+  },
+];
+
+var toneGrid = document.getElementById("toneGrid");
+
+tones.forEach(function (t) {
+  var card = document.createElement("div");
+  card.className = "tone-card";
+  card.innerHTML =
+    '<div class="th">' +
+    t.th +
+    "</div>" +
+    '<svg viewBox="0 0 100 56" width="100" height="56">' +
+    '<path d="' +
+    t.curve +
+    '" fill="none" stroke="#d4a73d" stroke-width="3" stroke-linecap="round"/>' +
+    "</svg>" +
+    '<div class="name">' +
+    t.nameZh +
+    "</div>" +
+    '<div class="rom">/' +
+    t.rom +
+    "/ · " +
+    t.name +
+    "</div>" +
+    '<div class="mark">' +
+    t.mark +
+    "</div>" +
+    '<button class="speak-btn">🔊</button>';
+
+  card.querySelector(".speak-btn").addEventListener("click", function () {
+    speak(t.th);
+  });
+
+  toneGrid.appendChild(card);
+});
+
 // 發音功能:用瀏覽器內建的語音合成念出泰文字
 function speak(text) {
   if (!("speechSynthesis" in window)) return;

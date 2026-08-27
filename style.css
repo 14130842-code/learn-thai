@@ -196,3 +196,41 @@ section h2 {
   position: static;
   background: rgba(255, 255, 255, 0.15);
 }
+.grid-tones {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 16px;
+}
+.tone-card {
+  background: #16213e;
+  color: #fff;
+  border-radius: 16px;
+  padding: 20px;
+  text-align: center;
+}
+.tone-card .th {
+  font-size: 28px;
+}
+.tone-card svg {
+  display: block;
+  margin: 12px auto 8px;
+}
+.tone-card .name {
+  font-weight: bold;
+  color: #e9cd82;
+}
+.tone-card .rom {
+  font-size: 12px;
+  opacity: 0.75;
+  margin-top: 2px;
+}
+.tone-card .mark {
+  font-size: 11px;
+  opacity: 0.6;
+  margin-top: 6px;
+}
+.tone-card .speak-btn {
+  position: static;
+  margin-top: 10px;
+  background: rgba(255, 255, 255, 0.15);
+}
