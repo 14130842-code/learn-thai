@@ -160,3 +160,39 @@ section h2 {
 .tip-box b {
   color: #e9cd82;
 }
+.grid-vowels {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 12px;
+}
+.vowel-card {
+  background: #16213e;
+  color: #fff;
+  border-radius: 14px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.vowel-card .th {
+  font-size: 26px;
+  display: block;
+}
+.vowel-card .meta {
+  font-size: 12px;
+  opacity: 0.7;
+  margin-top: 4px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.len-tag {
+  font-size: 10px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.15);
+}
+.vowel-card .speak-btn {
+  position: static;
+  background: rgba(255, 255, 255, 0.15);
+}

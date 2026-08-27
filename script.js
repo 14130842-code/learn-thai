@@ -175,6 +175,69 @@ var consonants = [
   },
 ];
 
+// 母音資料(len: short 短音 / long 長音 / special 特殊)
+var vowels = [
+  { th: "อะ", rom: "a", len: "short" },
+  { th: "อา", rom: "aa", len: "long" },
+  { th: "อิ", rom: "i", len: "short" },
+  { th: "อี", rom: "ii", len: "long" },
+  { th: "อึ", rom: "ue", len: "short" },
+  { th: "อื", rom: "uue", len: "long" },
+  { th: "อุ", rom: "u", len: "short" },
+  { th: "อู", rom: "uu", len: "long" },
+  { th: "เอะ", rom: "e", len: "short" },
+  { th: "เอ", rom: "ee", len: "long" },
+  { th: "แอะ", rom: "ae", len: "short" },
+  { th: "แอ", rom: "aae", len: "long" },
+  { th: "โอะ", rom: "o", len: "short" },
+  { th: "โอ", rom: "oo", len: "long" },
+  { th: "เอาะ", rom: "or", len: "short" },
+  { th: "ออ", rom: "oor", len: "long" },
+  { th: "เอียะ", rom: "ia", len: "short" },
+  { th: "เอีย", rom: "iia", len: "long" },
+  { th: "เอือะ", rom: "uea", len: "short" },
+  { th: "เอือ", rom: "uuea", len: "long" },
+  { th: "อัวะ", rom: "ua", len: "short" },
+  { th: "อัว", rom: "uua", len: "long" },
+  { th: "อำ", rom: "am", len: "special" },
+  { th: "ไอ", rom: "ai", len: "special" },
+  { th: "ใอ", rom: "ai", len: "special" },
+  { th: "เอา", rom: "ao", len: "special" },
+];
+
+var lenLabel = {
+  short: "short 短音",
+  long: "long 長音",
+  special: "special 特殊",
+};
+
+var vowelGrid = document.getElementById("vowelGrid");
+
+vowels.forEach(function (v) {
+  var card = document.createElement("div");
+  card.className = "vowel-card";
+  card.innerHTML =
+    "<div>" +
+    '<span class="th">' +
+    v.th +
+    "</span>" +
+    '<span class="meta">' +
+    '<span class="len-tag">' +
+    lenLabel[v.len] +
+    "</span> /" +
+    v.rom +
+    "/" +
+    "</span>" +
+    "</div>" +
+    '<button class="speak-btn">🔊</button>';
+
+  card.querySelector(".speak-btn").addEventListener("click", function () {
+    speak(v.th);
+  });
+
+  vowelGrid.appendChild(card);
+});
+
 // 發音功能:用瀏覽器內建的語音合成念出泰文字
 function speak(text) {
   if (!("speechSynthesis" in window)) return;
